@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react'
+import React, { useEffect, useReducer } from 'react'
 import { MainContext } from './context/MainContext'
 import { authReducer } from './reducers/authReducer'
 import { combineReducers } from './reducers/combineReducers'
@@ -18,6 +18,12 @@ export const NetflixApp = () => {
     [],
     init
   )
+
+  useEffect(() => {
+    if (!user) return
+
+    localStorage.setItem('user', JSON.stringify(user))
+  }, [user])
 
   return (
     <MainContext.Provider value={{ user, dispatch }}>

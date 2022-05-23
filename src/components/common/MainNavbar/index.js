@@ -1,6 +1,7 @@
 // Dependencies
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { LinkContainer } from 'react-router-bootstrap'
+import { userLogout } from '../../../actions/AuthAction'
 import {
   Container,
   Nav,
@@ -9,10 +10,19 @@ import {
   Button,
   NavDropdown,
 } from 'react-bootstrap'
+import { MainContext } from '../../../context/MainContext'
+import { useContext } from 'react'
 
 export const MainNavbar = () => {
+  const { dispatch } = useContext(MainContext)
+  const navigate = useNavigate()
   const styleActive = ({ isActive }) => {
     return 'nav-item nav-link ' + (isActive ? 'active' : '')
+  }
+
+  const handleLogout = () => {
+    userLogout(dispatch)
+    navigate('/login', { replace: true })
   }
 
   return (
@@ -54,7 +64,7 @@ export const MainNavbar = () => {
                 aria-label="Search"
               />
 
-              <Button to="/logout" className="btn btn-danger me-2">
+              <Button className="btn btn-danger me-2" onClick={handleLogout}>
                 Logout
               </Button>
             </Form>

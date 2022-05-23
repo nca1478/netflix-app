@@ -1,31 +1,29 @@
 // Dependencies
-import { Link } from 'react-router-dom'
+import { useContext } from 'react'
 import { Row, Col, Container } from 'react-bootstrap'
-
-// Custom Dependencies
+import { MainContext } from '../../../context/MainContext'
 import showcase from '../../../assets/img/showcase.svg'
 
 export const Showcase = () => {
+  const { user } = useContext(MainContext)
+  console.log(user)
+
   return (
     <Col className="bg-dark text-light p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
       <Container>
         <Row className="d-sm-flex align-items-center justify-content-between">
           <Col>
             <h1>
-              Películas y series ilimitadas y{' '}
-              <span className="text-danger">mucho más.</span>
+              Hola {user.current.name}, aquí tienes Películas y series
+              ilimitadas y <span className="text-danger">mucho más.</span>
             </h1>
             <p className="lead my-4">
-              Disfruta donde quieras. Cancela cuando quieras.
+              No te olvides de calificar la que más te guste.
             </p>
 
             <a href="#last-movies" className="btn btn-danger btn-lg">
               Ver Películas
             </a>
-
-            {/* <Link to="/offers" className="btn btn-danger btn-lg">
-              Ver Películas Disponibles
-            </Link> */}
           </Col>
           <img
             className="img-fluid w-50 d-none d-md-block"

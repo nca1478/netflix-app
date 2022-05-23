@@ -1,5 +1,4 @@
 // Dependencies
-import { Link } from 'react-router-dom'
 import { Col, Card } from 'react-bootstrap'
 import ReactStars from 'react-rating-stars-component'
 
