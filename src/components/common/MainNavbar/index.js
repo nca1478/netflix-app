@@ -1,5 +1,6 @@
 // Dependencies
 import { Link, NavLink, useNavigate } from 'react-router-dom'
+import { LinkContainer } from 'react-router-bootstrap'
 import {
   Container,
   Nav,
@@ -8,7 +9,6 @@ import {
   Button,
   NavDropdown,
 } from 'react-bootstrap'
-import { LinkContainer } from 'react-router-bootstrap'
 
 export const MainNavbar = () => {
   const styleActive = ({ isActive }) => {
