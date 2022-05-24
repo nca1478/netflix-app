@@ -6,6 +6,7 @@ import { Container, Col, Row, Card } from 'react-bootstrap'
 // Custom Dependencies
 import { userLogin } from '../../../actions/AuthAction'
 import { MainContext } from '../../../context/MainContext'
+import { LoginItem } from './LoginItem'
 
 export const Login = () => {
   const { dispatch } = useContext(MainContext)
@@ -26,53 +27,29 @@ export const Login = () => {
                 Selecciona un Usuario
               </Card.Header>
               <Card.Body className="d-flex justify-content-center">
-                <div
-                  className="cursor-links m-2"
-                  onClick={() => handleLogin({ userId: 1, name: 'Jordan' })}
-                >
-                  <img
-                    src="https://randomuser.me/api/portraits/men/20.jpg"
-                    className="img-thumbnail"
-                    alt=""
-                  />
-                  <h5 className="mt-2">Jordan</h5>
-                </div>
+                <LoginItem
+                  handleLogin={handleLogin}
+                  user={{ userId: 1, name: 'Jordan' }}
+                  img="https://randomuser.me/api/portraits/men/20.jpg"
+                />
 
-                <div
-                  className="cursor-links m-2"
-                  onClick={() => handleLogin({ userId: 2, name: 'Maria' })}
-                >
-                  <img
-                    src="https://randomuser.me/api/portraits/women/2.jpg"
-                    className="img-thumbnail"
-                    alt=""
-                  />
-                  <h5 className="mt-2">Maria</h5>
-                </div>
+                <LoginItem
+                  handleLogin={handleLogin}
+                  user={{ userId: 2, name: 'Maria' }}
+                  img="https://randomuser.me/api/portraits/women/2.jpg"
+                />
 
-                <div
-                  className="cursor-links m-2"
-                  onClick={() => handleLogin({ userId: 3, name: 'Pedro' })}
-                >
-                  <img
-                    src="https://randomuser.me/api/portraits/men/14.jpg"
-                    className="img-thumbnail"
-                    alt=""
-                  />
-                  <h5 className="mt-2">Pedro</h5>
-                </div>
+                <LoginItem
+                  handleLogin={handleLogin}
+                  user={{ userId: 3, name: 'Pedro' }}
+                  img="https://randomuser.me/api/portraits/men/14.jpg"
+                />
 
-                <div
-                  className="cursor-links m-2"
-                  onClick={() => handleLogin({ userId: 4, name: 'Carla' })}
-                >
-                  <img
-                    src="https://randomuser.me/api/portraits/women/9.jpg"
-                    className="img-thumbnail"
-                    alt=""
-                  />
-                  <h5 className="mt-2">Carla</h5>
-                </div>
+                <LoginItem
+                  handleLogin={handleLogin}
+                  user={{ userId: 4, name: 'Carla' }}
+                  img="https://randomuser.me/api/portraits/women/9.jpg"
+                />
               </Card.Body>
             </Card>
           </Col>
