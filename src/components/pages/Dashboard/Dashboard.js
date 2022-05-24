@@ -1,13 +1,13 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import { Row, Col, Container, Alert } from 'react-bootstrap'
-import { movieList } from '../../../data/data'
+import { MainContext } from '../../../context/MainContext'
 import { Footer } from '../../common/Footer'
 import { MainNavbar } from '../../common/MainNavbar'
 import { MovieItem } from '../../common/MovieItem'
 import { Showcase } from '../../common/Showcase'
 
 export const Dashboard = () => {
-  const [movies, setMovies] = useState(movieList)
+  const { movies } = useContext(MainContext)
 
   return (
     <div className="bg-dark">
@@ -25,7 +25,7 @@ export const Dashboard = () => {
               })
             ) : (
               <Alert variant="danger" className="w-75">
-                Oh no.... There are no job offers to show. Come back soon...
+                Oh no.... ¡No hay películas para mostrar!
               </Alert>
             )}
           </Row>

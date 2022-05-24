@@ -1,5 +1,6 @@
 // Dependencies
 import { Link, NavLink, useNavigate } from 'react-router-dom'
+import { useForm } from 'react-hook-form'
 import { LinkContainer } from 'react-router-bootstrap'
 import { userLogout } from '../../../actions/AuthAction'
 import {
@@ -12,16 +13,27 @@ import {
 } from 'react-bootstrap'
 import { MainContext } from '../../../context/MainContext'
 import { useContext } from 'react'
+import { movieLogout } from '../../../actions/MovieAction'
 
 export const MainNavbar = () => {
   const { dispatch } = useContext(MainContext)
+  const { register, handleSubmit, setValue } = useForm()
   const navigate = useNavigate()
   const styleActive = ({ isActive }) => {
     return 'nav-item nav-link ' + (isActive ? 'active' : '')
   }
 
+  const onSubmit = (data) => {
+    navigate(`/search?q=${data.searchText}`)
+  }
+
+  const handleOnBlur = () => {
+    setValue('searchText', null)
+  }
+
   const handleLogout = () => {
     userLogout(dispatch)
+    // movieLogout(dispatch)
     navigate('/login', { replace: true })
   }
 
@@ -56,12 +68,18 @@ export const MainNavbar = () => {
               </NavDropdown>
             </Nav>
 
-            <Form className="d-flex justify-content-around">
+            <Form
+              className="d-flex justify-content-around"
+              onSubmit={handleSubmit(onSubmit)}
+            >
               <Form.Control
                 type="search"
                 placeholder="Buscar por título"
                 className="me-2"
                 aria-label="Search"
+                {...register('searchText', {
+                  onBlur: handleOnBlur,
+                })}
               />
 
               <Button className="btn btn-danger me-2" onClick={handleLogout}>

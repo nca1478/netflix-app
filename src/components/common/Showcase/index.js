@@ -6,7 +6,6 @@ import showcase from '../../../assets/img/showcase.svg'
 
 export const Showcase = () => {
   const { user } = useContext(MainContext)
-  console.log(user)
 
   return (
     <Col className="bg-dark text-light p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
