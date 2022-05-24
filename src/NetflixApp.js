@@ -1,10 +1,13 @@
+// Dependencies
 import React, { useEffect, useReducer } from 'react'
-import { MainContext } from './context/MainContext'
-import { authReducer } from './reducers/authReducer'
+
+// Custom Dependencies
 import { combineReducers } from './reducers/combineReducers'
+import { movieReducer } from './reducers/movieReducer'
+import { authReducer } from './reducers/authReducer'
+import { MainContext } from './context/MainContext'
 import { AppRouter } from './routers/AppRouter'
 import { movieList } from './data/data'
-import { movieReducer } from './reducers/movieReducer'
 
 const init = () => {
   return {

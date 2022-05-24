@@ -1,6 +1,8 @@
 // Dependencies
 import { useContext } from 'react'
 import { Row, Col, Container } from 'react-bootstrap'
+
+// Custom Dependencies
 import { MainContext } from '../../../context/MainContext'
 import showcase from '../../../assets/img/showcase.svg'
 
@@ -8,7 +10,7 @@ export const Showcase = () => {
   const { user } = useContext(MainContext)
 
   return (
-    <Col className="bg-dark text-light p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
+    <Col className="bg-dark text-light p-5 p-lg-0 pt-lg-5 text-center text-sm-start animate__animated animate__fadeInRight">
       <Container>
         <Row className="d-sm-flex align-items-center justify-content-between">
           <Col>

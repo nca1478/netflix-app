@@ -1,8 +1,8 @@
 // Dependencies
+import { useContext } from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { LinkContainer } from 'react-router-bootstrap'
-import { userLogout } from '../../../actions/AuthAction'
 import {
   Container,
   Nav,
@@ -11,8 +11,10 @@ import {
   Button,
   NavDropdown,
 } from 'react-bootstrap'
+
+// Custom Dependencies
+import { userLogout } from '../../../actions/AuthAction'
 import { MainContext } from '../../../context/MainContext'
-import { useContext } from 'react'
 
 export const MainNavbar = () => {
   const { dispatch } = useContext(MainContext)

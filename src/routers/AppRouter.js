@@ -1,7 +1,10 @@
+// Dependencies
 import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+
+// Custom Dependencies
 import { Login } from '../components/pages/Login/Login'
-import { DashboardRoutes } from './DashboardRoutes'
+import { OtherRoutes } from './OtherRoutes'
 import { PrivateRoute } from './PrivateRoute'
 import { PublicRoute } from './PublicRoute'
 
@@ -21,7 +24,7 @@ export const AppRouter = () => {
           path="/*"
           element={
             <PrivateRoute>
-              <DashboardRoutes />
+              <OtherRoutes />
             </PrivateRoute>
           }
         ></Route>

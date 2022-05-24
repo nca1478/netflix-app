@@ -1,24 +1,20 @@
+// Dependencies
 import React, { useContext } from 'react'
 import { Row, Col, Container, Alert } from 'react-bootstrap'
-import { MainContext } from '../../../context/MainContext'
-import { Footer } from '../../common/Footer'
-import { MainNavbar } from '../../common/MainNavbar'
-import { MovieItem } from '../../common/MovieItem'
-import { Showcase } from '../../common/Showcase'
 
-export const Dashboard = () => {
+// Custom Dependencies
+import { MainContext } from '../../../context/MainContext'
+import { MovieItem } from '../../common/MovieItem'
+
+export const HomePage = () => {
   const { movies, user } = useContext(MainContext)
 
   return (
-    <div className="bg-dark">
-      <MainNavbar />
-      <Showcase />
+    <div id="last-movies" className="pt-1">
       <Col className="bg-dark">
-        <h2 id="last-movies" className="text-center text-white mt-5 mb-4">
-          Últimas Peliculas
-        </h2>
+        <h2 className="text-center text-white mt-5 mb-4">Últimas Peliculas</h2>
         <Container className="px-4">
-          <Row className="d-flex justify-content-center g-4 pt-2 ">
+          <Row className="d-flex justify-content-center g-4 pt-2 animate__animated animate__fadeIn">
             {movies.length > 0 ? (
               movies.map((movie) => {
                 return (
@@ -36,7 +32,6 @@ export const Dashboard = () => {
             )}
           </Row>
         </Container>
-        <Footer />
       </Col>
     </div>
   )

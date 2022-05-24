@@ -2,6 +2,8 @@
 import { useContext } from 'react'
 import { Col, Card } from 'react-bootstrap'
 import ReactStars from 'react-rating-stars-component'
+
+// Custom Dependencies
 import { movieUpdateRating } from '../../../actions/MovieAction'
 import { MainContext } from '../../../context/MainContext'
 

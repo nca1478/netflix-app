@@ -1,3 +1,4 @@
+// Dependencies
 import { useContext } from 'react'
 import { Navigate } from 'react-router-dom'
 import { MainContext } from '../context/MainContext'

@@ -1,6 +1,9 @@
+// Dependencies
 import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Container, Col, Row, Card } from 'react-bootstrap'
+
+// Custom Dependencies
 import { userLogin } from '../../../actions/AuthAction'
 import { MainContext } from '../../../context/MainContext'
 
@@ -15,7 +18,7 @@ export const Login = () => {
 
   return (
     <div className="m-0 vh-100 row justify-content-center align-items-center bg-dark">
-      <Container className="p-4">
+      <Container className="p-4 animate__animated animate__fadeInDown">
         <Row className="text-center">
           <Col md={{ span: 6, offset: 3 }}>
             <Card className="bg-dark text-white py-3 border-0">
