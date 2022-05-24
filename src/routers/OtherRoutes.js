@@ -11,6 +11,7 @@ import { MoviesAnioPage } from '../components/pages/Movies/Anio'
 import { SearchPage } from '../components/pages/Movies/Search'
 import { MoviesTopsPage } from '../components/pages/Movies/Tops'
 import { MoviesUserPage } from '../components/pages/Movies/User'
+import { NotFound } from '../components/pages/NotFound/NotFound'
 
 export const OtherRoutes = () => {
   const location = useLocation()
@@ -26,6 +27,7 @@ export const OtherRoutes = () => {
         <Route path="/user" element={<MoviesUserPage />} />
         <Route path="/anio" element={<MoviesAnioPage />} />
         <Route path="/tops" element={<MoviesTopsPage />} />
+        <Route exact path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </div>
