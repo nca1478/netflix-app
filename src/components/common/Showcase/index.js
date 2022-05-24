@@ -16,7 +16,7 @@ export const Showcase = () => {
               Hola {user.current.name}, aquí tienes Películas y series
               ilimitadas y <span className="text-danger">mucho más.</span>
             </h1>
-            <p className="lead my-4">
+            <p className="lead fw-bold my-4">
               No te olvides de calificar la que más te guste.
             </p>
 

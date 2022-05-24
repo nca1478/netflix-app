@@ -1,12 +1,16 @@
 // Dependencies
+import { useContext } from 'react'
 import { Col, Card } from 'react-bootstrap'
 import ReactStars from 'react-rating-stars-component'
+import { movieUpdateRating } from '../../../actions/MovieAction'
+import { MainContext } from '../../../context/MainContext'
 
 export const MovieItem = (props) => {
-  const { id, title, img } = props
+  const { dispatch } = useContext(MainContext)
+  const { userIdLogged, id, rating, img, edit } = props
 
   const ratingChanged = (newRating) => {
-    console.log(newRating)
+    movieUpdateRating({ id, newRating, userIdLogged }, dispatch)
   }
 
   return (
@@ -18,11 +22,13 @@ export const MovieItem = (props) => {
             <span className="fw-bold">Calificar: </span>
             <div>
               <ReactStars
+                value={rating}
                 count={5}
                 onChange={ratingChanged}
                 size={30}
                 activeColor="#bb2d3b"
                 className="mb-0"
+                edit={edit}
               />
             </div>
           </div>

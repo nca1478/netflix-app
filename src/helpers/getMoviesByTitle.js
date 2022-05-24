@@ -1,10 +1,8 @@
-import { movieList } from '../data/data'
-
-export const getMoviesByTitle = (title = '') => {
+export const getMoviesByTitle = (title = '', movies) => {
   if (title.length === 0) {
     return []
   }
 
   title = title.toLowerCase()
-  return movieList.filter((movie) => movie.title.toLowerCase().includes(title))
+  return movies.filter((movie) => movie.title.toLowerCase().includes(title))
 }

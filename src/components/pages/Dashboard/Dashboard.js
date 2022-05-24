@@ -7,7 +7,7 @@ import { MovieItem } from '../../common/MovieItem'
 import { Showcase } from '../../common/Showcase'
 
 export const Dashboard = () => {
-  const { movies } = useContext(MainContext)
+  const { movies, user } = useContext(MainContext)
 
   return (
     <div className="bg-dark">
@@ -21,7 +21,13 @@ export const Dashboard = () => {
           <Row className="d-flex justify-content-center g-4 pt-2 ">
             {movies.length > 0 ? (
               movies.map((movie) => {
-                return <MovieItem key={movie.id} {...movie} />
+                return (
+                  <MovieItem
+                    key={movie.id}
+                    userIdLogged={user.current.userId}
+                    {...movie}
+                  />
+                )
               })
             ) : (
               <Alert variant="danger" className="w-75">

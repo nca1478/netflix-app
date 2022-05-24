@@ -13,7 +13,6 @@ import {
 } from 'react-bootstrap'
 import { MainContext } from '../../../context/MainContext'
 import { useContext } from 'react'
-import { movieLogout } from '../../../actions/MovieAction'
 
 export const MainNavbar = () => {
   const { dispatch } = useContext(MainContext)
@@ -33,7 +32,6 @@ export const MainNavbar = () => {
 
   const handleLogout = () => {
     userLogout(dispatch)
-    // movieLogout(dispatch)
     navigate('/login', { replace: true })
   }
 
@@ -64,6 +62,10 @@ export const MainNavbar = () => {
 
                 <LinkContainer to="/anio">
                   <NavDropdown.Item>Peliculas x Año</NavDropdown.Item>
+                </LinkContainer>
+
+                <LinkContainer to="/user">
+                  <NavDropdown.Item>Peliculas x Usuario</NavDropdown.Item>
                 </LinkContainer>
               </NavDropdown>
             </Nav>
