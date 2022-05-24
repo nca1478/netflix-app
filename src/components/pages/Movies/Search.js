@@ -7,7 +7,6 @@ import queryString from 'query-string'
 // Custom Depenpendies
 import { getMoviesByTitle } from '../../../helpers/getMoviesByTitle'
 import { MovieItem } from '../../common/MovieItem'
-import { SpaceBlank } from '../../common/SpaceBlank/SpaceBlank'
 import { MainContext } from '../../../context/MainContext'
 
 export const SearchPage = () => {
@@ -25,12 +24,12 @@ export const SearchPage = () => {
         setMoviesList([])
       }
     },
-    [q]
+    [movies]
   )
 
   useEffect(() => {
     getMovies(q).catch(console.error)
-  }, [getMovies])
+  }, [q, getMovies])
 
   return (
     <Col className="bg-dark animate__animated animate__fadeIn">
@@ -54,7 +53,6 @@ export const SearchPage = () => {
               <Alert variant="danger" className="w-75">
                 Oh no.... ¡No hay películas para mostrar!
               </Alert>
-              <SpaceBlank height="44vh" />
             </>
           )}
         </Row>

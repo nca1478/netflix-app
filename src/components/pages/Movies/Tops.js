@@ -1,5 +1,5 @@
 import React from 'react'
 
 export const MoviesTopsPage = () => {
-  return <div>Movies Tops Page</div>
+  return <div>Movies Anio Page</div>
 }

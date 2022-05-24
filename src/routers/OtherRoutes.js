@@ -17,7 +17,7 @@ export const OtherRoutes = () => {
   const location = useLocation()
 
   return (
-    <div className="bg-dark">
+    <div className="bg-dark d-flex flex-column min-vh-100">
       <MainNavbar />
       {location.pathname === '/' && <Showcase />}
 

@@ -4,7 +4,6 @@ import { Row, Col, Container, Alert } from 'react-bootstrap'
 
 // Custom Dependencies
 import { MovieItem } from '../../common/MovieItem'
-import { SpaceBlank } from '../../common/SpaceBlank/SpaceBlank'
 import { getMoviesByUser } from '../../../helpers/getMoviesByUser'
 import { MainContext } from '../../../context/MainContext'
 
@@ -44,7 +43,6 @@ export const MoviesUserPage = () => {
               <Alert variant="danger" className="w-75">
                 Oh no.... ¡No hay películas para mostrar!
               </Alert>
-              <SpaceBlank height="44vh" />
             </>
           )}
         </Row>
