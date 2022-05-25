@@ -7,7 +7,7 @@ import { Footer } from '../components/common/Footer'
 import { MainNavbar } from '../components/common/MainNavbar'
 import { Showcase } from '../components/common/Showcase'
 import { HomePage } from '../components/pages/Home/Home'
-import { MoviesAnioPage } from '../components/pages/Movies/Anio'
+import { MoviesYearPage } from '../components/pages/Movies/Year'
 import { SearchPage } from '../components/pages/Movies/Search'
 import { MoviesTopsPage } from '../components/pages/Movies/Tops'
 import { MoviesUserPage } from '../components/pages/Movies/User'
@@ -25,7 +25,7 @@ export const OtherRoutes = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/search" element={<SearchPage />} />
         <Route path="/user" element={<MoviesUserPage />} />
-        <Route path="/anio" element={<MoviesAnioPage />} />
+        <Route path="/year" element={<MoviesYearPage />} />
         <Route path="/tops" element={<MoviesTopsPage />} />
         <Route exact path="*" element={<NotFound />} />
       </Routes>

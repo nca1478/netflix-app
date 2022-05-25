@@ -62,7 +62,7 @@ export const MainNavbar = () => {
                   <NavDropdown.Item>Peliculas x Calificación</NavDropdown.Item>
                 </LinkContainer>
 
-                <LinkContainer to="/anio">
+                <LinkContainer to="/year">
                   <NavDropdown.Item>Peliculas x Año</NavDropdown.Item>
                 </LinkContainer>
 
