@@ -59,7 +59,7 @@ export const MainNavbar = () => {
 
               <NavDropdown title="Reportes" id="basic-nav-dropdown">
                 <LinkContainer to="/tops">
-                  <NavDropdown.Item>Peliculas Tops</NavDropdown.Item>
+                  <NavDropdown.Item>Peliculas x Calificación</NavDropdown.Item>
                 </LinkContainer>
 
                 <LinkContainer to="/anio">
